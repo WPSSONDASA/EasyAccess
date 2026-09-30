@@ -9,9 +9,9 @@ const path = require('path');
 // 2. Definir directorio de entrada y salida.
 // Importante: los directorios deben ser absolutos, no relativos, p. Ej.
 // appDirectory: "C:\\Users\sdkca\Desktop\OurCodeWorld-win32-x64", 
-const APP_DIR = path.resolve(__dirname, './EasyAccess-win32-x64');
+const APP_DIR = path.resolve(__dirname, './release-builds/EasyAccess-win32-x64');
 // outputDirectory: "C:\\Users\sdkca\Desktop\windows_installer", 
-const OUT_DIR = path.resolve(__dirname, './EasyAccess_installer');
+const OUT_DIR = path.resolve(__dirname, './release-builds/EasyAccess_installer');
 
 // 3. Instancia de MSICreator
 const msiCreator = new MSICreator({
@@ -19,13 +19,14 @@ const msiCreator = new MSICreator({
     outputDirectory: OUT_DIR,
 
     // Configurar metadatos
-    description: 'App EasyAccess',
     exe: 'EasyAccess',
-    name: 'EasyAccess',
-    manufacturer: 'Sonda de colombia',
-    version: '1.0.1',
-    description: 'Software EasyAccess sonda',
-    appIconPath: './assets/icons/win/Sonda.ico',
+    name: 'EasyAccess - Seguros del Estado',
+    manufacturer: 'SONDA de Colombia',
+    version: '1.0.0',
+    // Código fijo por cliente: permite que una versión nueva actualice a la anterior.
+    upgradeCode: '7A35588A-414B-458A-A45F-E5D7FEFF66D3',
+    description: 'EasyAccess para Seguros del Estado',
+    appIconPath: path.resolve(__dirname, './assets/icons/win/segurosdelestado.ico'),
     shortcutFolderName: 'EasyAccess',
     shortcutName: 'EasyAccess',
     cultures: 'es-es',

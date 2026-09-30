@@ -2,7 +2,7 @@
 const { app, BrowserWindow, Menu, Tray } = require('electron');
 const url = require('url');
 const path = require('path');
-const iconpath = path.join(__dirname, 'icons/Sonda.ico')
+const iconpath = path.join(__dirname, 'icons/segurosdelestado.ico')
  
 
 
