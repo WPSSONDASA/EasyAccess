@@ -496,3 +496,65 @@ thead {
   font-family: var(--fuente-texto);
   margin-top: 3%;
 }
+
+/* ==========================================================
+   Tarjetas centradas. Con pocas aplicaciones (hasta 3) use
+   class="cards cards-grandes"; con 4 o más, solo class="cards".
+   ========================================================== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 22px;
+  margin: 6px 0 18px;
+}
+
+.cards .Titlecar {
+  margin: 0 0 6px;
+}
+
+.cards-grandes {
+  gap: 14px 16px;
+  margin: 14px 0 24px;
+}
+
+.cards-grandes .container {
+  width: 128px;
+}
+
+.cards-grandes .Titlecar {
+  font-size: 82%;
+  color: var(--color-primario);
+}
+
+.cards-grandes .container .card {
+  margin: 0 auto;
+}
+
+.cards-grandes .container .card {
+  width: 114px;
+  height: 110px;
+  box-shadow: 0 4px 10px rgba(var(--color-primario-rgb), 0.25);
+}
+
+.cards-grandes .container .card:before {
+  clip-path: circle(38px at 113% 1%);
+}
+
+.cards-grandes .container .card:hover:before {
+  clip-path: circle(300px at 80% -20%);
+}
+
+.cards-grandes .container .card .imgBx img {
+  width: 106px;
+}
+
+.cards-grandes .container .card .contentBx .size {
+  padding-top: 20px;
+}
+
+.cards-grandes .button-18 {
+  min-height: 44px;
+  padding-left: 22px;
+  padding-right: 22px;
+}

@@ -20,6 +20,7 @@ const msiCreator = new MSICreator({
 
     // Configurar metadatos
     exe: 'EasyAccess',
+    arch: 'x64',   // debe coincidir con --arch de package-win (x64 o x86)
     name: 'EasyAccess - Seguros del Estado',
     manufacturer: 'SONDA de Colombia',
     version: '1.0.0',

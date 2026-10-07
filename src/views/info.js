@@ -124,65 +124,17 @@ if (total_mem_in_mb >= 1024){
 else{
   document.getElementById("InfoRamfree").innerHTML =total_mem_in_mb+Megas;
 }
-/* A button that opens a link in the default browser. */
-const openDigWork = document.getElementById('openDigWork')
+/* Enlaces de las tarjetas: id del botón en index.html -> URL que abre en el navegador predeterminado.
+   Para agregar o cambiar una aplicación, edite solo esta lista. */
+const ENLACES = {
+  openDesbloqueo: 'https://autogestion.segurosdelestado.com/m/home',
+  openAutogestion: 'https://mis.segurosdelestado.com',
+  openGestionInterna: 'https://segurosdelestado.sharepoint.com/sites/IntranetCorporativa/SitePages/Aplicaciones.aspx',
+};
 
-openDigWork.addEventListener('click', function(event){
-  shell.openExternal('https://intranet.sonda.com/');
-})
-
-/* A button that opens a link in the default browser. */
-const openSondaPlus = document.getElementById('openSondaPlus')
-
-openSondaPlus.addEventListener('click', function(event){
-  shell.openExternal('https://performancemanager8.successfactors.com/');
-})
-
-/* A button that opens a link in the default browser. */
-const openAranUser = document.getElementById('openAranUser')
-
-openAranUser.addEventListener('click', function(event){
-  shell.openExternal('https://itsm.sonda.com/asmscustomer/index.html#/project=MTc=');
-})
-
-/* A button that opens a link in the default browser . */
-const openProcesInter = document.getElementById('openProcesInter')
-
-openProcesInter.addEventListener('click', function(event){
-  shell.openExternal('https://procesosinternos.crm.dynamics.com/main.aspx?appid=ba5ad4de-b298-ec11-b400-00224808deed&pagetype=entityrecord&etn=new_tareasgestioncomercial');
-})
-
-/* A button that opens a link in the default browser . */
-const openPortalAutoGest = document.getElementById('openPortalAutoGest')
-
-openPortalAutoGest.addEventListener('click', function(event){
-  shell.openExternal('https://tienlace.arandasoft.com/usdkv8/#!/home/case/new/MV8xNl81Mw==');
-})
-
-/* A button that opens a link in the default browser . */
-const openFin700 = document.getElementById('openFin700')
-
-openFin700.addEventListener('click', function(event){
-  shell.openExternal('https://fin700v75cl.sonda.com/fin700/');
-})
-
-/* A button that opens a link in the default browser . */
-const openSalesForce = document.getElementById('openSalesForce')
-
-openSalesForce.addEventListener('click', function(event){
-  shell.openExternal('https://df40000037jhmeau.my.salesforce.com/');
-})
-
-
-/* A button that opens a link in the default browser . */
-const openReseParq = document.getElementById('openReseParq')
-
-openReseParq.addEventListener('click', function(event){
-  shell.openExternal('https://apps.powerapps.com/play/e/default-f149d0bc-0eb5-4f9a-9e82-24a76eacf8de/a/c62efd5a-72a6-4d96-9904-7dbd90402777?tenantId=f149d0bc-0eb5-4f9a-9e82-24a76eacf8de&source=portal');
-})
-
-
-
-
-
-
+Object.entries(ENLACES).forEach(([id, url]) => {
+  const boton = document.getElementById(id);
+  if (boton) {
+    boton.addEventListener('click', () => shell.openExternal(url));
+  }
+});
